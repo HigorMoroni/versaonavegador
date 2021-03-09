@@ -9,10 +9,11 @@
 <body>
    <p><h1>Navegador: </h1><h2 id="navegador"></h2></p>
    <p><h1>Versão: </h1><h2 id="versao"></h2></p>
+   <p><h1>AppName: </h1><h2 id="appname"></h2></p>
  
    <script type="text/javascript">
       function get_browser(){
-        var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
+        var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|edg|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
         if(/trident/i.test(M[1])){
             tem=/\brv[ :]+(\d+)/g.exec(ua) || []; 
             return {name:'IE',version:(tem[1]||'')};
@@ -29,17 +30,12 @@
         };
      }
      var browser=get_browser();
-     console.log(browser)
-     console.log(browser.name)
-     console.log(browser.version)
-     console.dir(navigator)
-     console.log(navigator.userAgent)
-     console.log(navigator.appName)
-     console.log(navigator.appVersion)
      var navegadortag = document.getElementById('navegador')
      navegadortag.innerHTML = browser.name
      var versaotag = document.getElementById('versao')
      versaotag.innerHTML = browser.version
+     var appnametag = document.getElementById('appname')
+     appnametag.innerHTML = navigator.appName
    </script>
 </body>
 </html>
