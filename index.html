@@ -9,8 +9,7 @@
 <body>
    <p><h1>Navegador: </h1><h2 id="navegador"></h2></p>
    <p><h1>Versão: </h1><h2 id="versao"></h2></p>
-   
-   <script type="text/javascript" src="json2.js"></script>
+ 
    <script type="text/javascript">
       function get_browser(){
         var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
@@ -41,7 +40,6 @@
      navegadortag.innerHTML = browser.name
      var versaotag = document.getElementById('versao')
      versaotag.innerHTML = browser.version
-     document.write(JSON.stringify(navigator));
    </script>
 </body>
 </html>
